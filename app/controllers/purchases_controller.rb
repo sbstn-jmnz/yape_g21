@@ -13,4 +13,12 @@ class PurchasesController < ApplicationController
       redirect_to products_path, notice: 'No se pudo realizar la compra'
     end
   end
+
+  def index
+    if current_user.admin?
+      @purchases = Purchase.all
+    else
+      redirect_to root_path, notice: 'No eres admin'
+    end
+  end
 end
