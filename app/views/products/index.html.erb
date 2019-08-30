@@ -10,7 +10,7 @@
           <h5 class="card-title"><%= product.name %></h5>
           <p class="card-text"><%= product.description %></p>
           <p class="card-text"><small class="text-muted"><%= number_to_currency product.price, strip_insignificant_zeros: true %></small></p>
-          <%= link_to product.user.name, users_path(product.user), class:'mx-auto' %>
+          <%= link_to product.user.name, users_path(product.user), class:'ml-auto' %>
           <%= link_to 'Buy', create_purchases_path(product), method: :post, class: 'btn btn-danger' %>
         </div>
       </div>

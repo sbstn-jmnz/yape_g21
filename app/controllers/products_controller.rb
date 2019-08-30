@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.where(sold: false)
+    @products = @products.where('user_id != ?', current_user.id) if current_user
   end
 
   # GET /products/1
